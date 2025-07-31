@@ -1,0 +1,64 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f1f1f1, #e2e2e2);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5b5fc7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.form-box p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.form-box span {
+    color: #5b5fc7;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.admin-link {
+    color: #ff4d4d;
+    cursor: pointer;
+    margin-top: 10px;
+}

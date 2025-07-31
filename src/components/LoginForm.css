@@ -1,0 +1,42 @@
+.login-form,
+.admin-login {
+    width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h2,
+.admin-login h2 {
+    text-align: center;
+}
+
+.login-form form,
+.admin-login form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.register-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
