@@ -2,67 +2,30 @@ import React from 'react';
 import logo from './assets/logo.jpg';
 import Booking from './booking';
 import About from './about';
-import LoginForm from './components/LoginForm.jsx';
-import AdminLogin from './components/AdminLogin.jsx';
+import LoginForm from './components/LoginForm.js';
+import AdminLogin from './components/AdminLogin.js';
 import Gallery from './Gallery';
 import Members from './Members';
 import Events from './Events';
 import Merch from './Merch';
+import Contact from './Contact.js';
+import AdminPanel from './components/AdminPanel.js';
+import ProtectedRoute from './components/ProtectedRoute.js';
+import UserLoginForm from './components/UserLoginForm.js';
+import UserLoginRegister from './components/UserLoginRegister.js';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext.js';
 import './App.css';
 
-
-function App() {
-    return ( <
-        Router >
-        <
-        Navbar / >
-        <
-        Routes >
-        <
-        Route path = "/"
-        element = { < Home / > }
-        /> <
-        Route path = "/about"
-        element = { < About / > }
-        /> <
-        Route path = "/events"
-        element = { < Events / > }
-        /> <
-        Route path = "/gallery"
-        element = { < Gallery / > }
-        /> <
-        Route path = "/members"
-        element = { < Members / > }
-        /> <
-        Route path = "/merch"
-        element = { < Merch / > }
-        />  <
-        Route path = "/booking"
-        element = { < Booking / > }
-        /><
-        Route path = "/contact"
-        element = { < Contact / > }
-        />  <
-        Route path = "/AdminLogin"
-        element = { < AdminLogin / > }
-        /><
-        Route path = "/loginForm"
-        element = { < LoginForm / > }
-        /> < /
-        Routes > <
-        Footer / >
-        <
-        /Router>
-    );
-}
-
+// ✅ Navbar Component
 function Navbar() {
     return ( <
         nav className = "navbar" >
         <
-        div className = "logo" > < Link to = "/" > A Musical Club of Metropolitan University < /Link></div >
+        div className = "logo" >
         <
+        Link to = "/" > A Musical Club of Metropolitan University < /Link> < /
+        div > <
         ul >
         <
         li > < Link to = "/" > Home < /Link></li >
@@ -81,7 +44,7 @@ function Navbar() {
         <
         li > < Link to = "/contact" > Contact < /Link></li >
         <
-        li > < Link to = "/login"
+        li > < Link to = "/loginForm"
         className = "login-btn" > Login < /Link></li >
         <
         /ul> < /
@@ -89,7 +52,7 @@ function Navbar() {
     );
 }
 
-
+// ✅ Home Component
 function Home() {
     return ( <
         >
@@ -107,7 +70,7 @@ function Home() {
         div className = "hero-buttons" >
         <
         button > Explore Events < /button> <
-        button > Official Marchentise < /button> < /
+        button > Official Merchandise < /button> < /
         div > <
         /div> < /
         section >
@@ -140,24 +103,78 @@ function Home() {
     );
 }
 
-
-
-// function Events() { return <div className = "page-content" > < h2 > Events Page < /h2></div > ; }
-
-{ /* function Gallery() { return <div className = "page-content" > < h2 > Gallery Page < /h2></div > ; } */ }
-
-{ /* function Members() { return <div className = "page-content" > < h2 > Members Page < /h2></div > ; } */ }
-
-// function Merch() { return <div className = "page-content" > < h2 > Merch Page < /h2></div > ; }
-
-function Contact() { return <div className = "page-content" > < h2 > Contact Page < /h2></div > ; }
-
+// ✅ Footer Component
 function Footer() {
     return ( <
         footer className = "footer" >
         <
-        p > ©2025 Alpha Community | All Rights Reserved < /p> < /
+        p > Alpha Community© 2025 < /p> < /
         footer >
     );
 }
+
+// ✅ App Component
+function App() {
+    return ( <
+        AuthProvider >
+        <
+        Router >
+        <
+        Navbar / >
+        <
+        Routes >
+        <
+        Route path = "/"
+        element = { < Home / > }
+        /> <
+        Route path = "/about"
+        element = { < About / > }
+        /> <
+        Route path = "/events"
+        element = { < Events / > }
+        /> <
+        Route path = "/gallery"
+        element = { < Gallery / > }
+        /> <
+        Route path = "/members"
+        element = { < Members / > }
+        /> <
+        Route path = "/merch"
+        element = { < Merch / > }
+        /> <
+        Route path = "/booking"
+        element = { < Booking / > }
+        /> <
+        Route path = "/contact"
+        element = { < Contact / > }
+        /> <
+        Route path = "/admin-login"
+        element = { < AdminLogin / > }
+        /> <
+        Route path = "/loginForm"
+        element = { < LoginForm / > }
+        /> <
+        Route path = "/admin-panel"
+        element = { <
+            ProtectedRoute >
+            <
+            AdminPanel / >
+            <
+            /ProtectedRoute>
+        }
+        />  <
+        Route path = "/loginForm"
+        element = { < UserLoginRegister / > }
+        /> <
+        Route path = "/login"
+        element = { < UserLoginForm / > }
+        /> < /
+        Routes > <
+        Footer / >
+        <
+        /Router> < /
+        AuthProvider >
+    );
+}
+
 export default App;

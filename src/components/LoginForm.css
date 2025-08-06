@@ -1,42 +1,66 @@
-.login-form,
-.admin-login {
-    width: 300px;
-    margin: 40px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f4f4f4;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
-}
+/* src/components/LoginForm.css */
 
-.login-form h2,
-.admin-login h2 {
-    text-align: center;
-}
-
-.login-form form,
-.admin-login form {
+.login-form-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: #1e1e1e;
 }
 
-input {
+.login-box {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 0 15px #e50914;
+    color: white;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #e50914;
+}
+
+.login-box input {
+    width: 100%;
     margin: 10px 0;
     padding: 10px;
-    font-size: 16px;
+    border: none;
+    border-radius: 5px;
 }
 
-button {
-    background-color: #007bff;
+.login-box button {
+    background: #e50914;
+    border: none;
     color: white;
     padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.register-link {
-    color: blue;
+.login-box button:hover {
+    background: #a2070e;
+}
+
+.login-box span {
+    color: #e50914;
     cursor: pointer;
-    text-decoration: underline;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

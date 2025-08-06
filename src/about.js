@@ -1,7 +1,7 @@
 import React from 'react';
 import './about.css';
 
-// Import Sir Images
+// Sir Images
 import sir1 from './assets/sir1.jpg';
 import sir2 from './assets/sir2.jpg';
 import sir3 from './assets/sir3.jpeg';
@@ -18,7 +18,7 @@ import sir13 from './assets/sir13.jpeg';
 import sir14 from './assets/sir14.jpeg';
 import sir15 from './assets/sir15.jpeg';
 
-// Import Band Images
+// Band Images
 import band1 from './assets/band1.jpg';
 import band2 from './assets/band2.jpeg';
 import band3 from './assets/band3.jpeg';
