@@ -1,0 +1,18 @@
+{
+    "name": "project-300",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd Backend && node server.js",
+        "client": "cd Alpha-Community && npm start"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "concurrently": "^8.2.0"
+    }
+}
